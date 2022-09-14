@@ -1,0 +1,24 @@
+.div {
+  background-color: aliceblue;
+  margin: auto;
+}
+.row {
+  border: 10px;
+  margin: 10px;
+}
+.child1 {
+  padding: 10px;
+}
+.child2 {
+  background-color: rgb(235, 235, 240);
+  border-radius: 15px;
+  text-align: right;
+  padding: 15px;
+  font-weight: 600;
+  color: rgb(94, 94, 244);
+  font-style: italic;
+  font-size: small;
+  
+
+
+}

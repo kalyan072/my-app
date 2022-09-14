@@ -1,0 +1,33 @@
+<body>
+  <form [formGroup]="loginForm">
+    <h3>sigin</h3>
+    <br />
+    <input type="text" formControlName="email" placeholder="email Address" />
+    <br />
+    <br />
+    <input type="password" formControlName="password" placeholder="password" />
+    <div
+    class="error"
+    *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
+  >
+    <p *ngIf="loginForm.get('password')?.errors?.['required']">password is required</p>
+    <p *ngIf="loginForm.get('password')?.errors?.['pattern']">
+      At least on uppercase, one lowercase, one speial charecter,on digit
+    </p>
+  </div>
+ <br />
+    <input type="checkbox">
+    <label>Remember password</label>
+    <br />
+    <button (click)="submit()" class="bone">sign</button>
+    <br />
+    <hr />
+    <br>
+    <button class="btwo">G sign in with goggle</button>
+    <br>
+    <br>
+    <button class="bthree">f sign in with facebook</button>
+    <br />
+
+  </form>
+</body>

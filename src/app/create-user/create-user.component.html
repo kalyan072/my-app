@@ -1,0 +1,132 @@
+
+<form [formGroup]="userForm">
+  <label>name</label>
+  <input type="text" formControlName="name" />
+  <div *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid">
+    <p *ngIf="userForm.get('name')?.errors?.['required']" class="error">
+      Name is required
+    </p>
+    <p *ngIf="userForm.get('name')?.errors?.['minlength']" class="error">
+      Minium 3 chars required
+    </p>
+    <p *ngIf="userForm.get('name')?.errors?.['maxlength']" class="error">
+      Maximum 10 chars required
+    </p>
+  </div>
+  <br />
+
+  <label>age</label>
+  <input type="number" formControlName="age" />
+  <div
+    class="error"
+    *ngIf="userForm.get('age')?.touched && userForm.get('age')?.invalid"
+  >
+    <p *ngIf="userForm.get('age')?.errors?.['required']">age is required</p>
+    <p *ngIf="userForm.get('age')?.errors?.['min']">
+      age should be greater than 0
+    </p>
+    <p *ngIf="userForm.get('age')?.errors?.['max']">
+      age should be less than 100
+    </p>
+  </div>
+  <br />
+
+  <label>phone</label>
+  <input type="number" formControlName="phone" />
+  <div
+    class="error"
+    *ngIf="userForm.get('phone')?.touched && userForm.get('phone')?.invalid"
+  >
+    <p *ngIf="userForm.get('phone')?.errors?.['required']">phone is required</p>
+    <p *ngIf="userForm.get('age')?.errors?.['min']">
+      phone should be contain min 10 numbers
+    </p>
+    <p *ngIf="userForm.get('age')?.errors?.['max']">
+      phone should be contain max 10 numbers
+    </p>
+  </div>
+  <br />
+
+  <div formControlName="address">
+    <label>state</label>
+    <input type="text" formControlName="state" /><br />
+
+    <label>pincode</label>
+    <input type="number" formControlName="pincode" />
+    <div
+      class="error"
+      *ngIf="
+        userForm.get('address')?.get('pincode')?.touched &&
+        userForm.get('address')?.get('pincode')?.invalid
+      "
+    >
+      <p *ngIf="userForm.get('address')?.get('pincode')?.errors?.['required']">
+        pincode is required
+      </p>
+      <p *ngIf="userForm.get('address')?.get('pincode')?.errors?.['min']">
+        pincode should be contain min 6 numbers
+      </p>
+      <p *ngIf="userForm.get('address')?.get('pincode')?.errors?.['max']">
+        pincode should be contain max 6 numbers
+      </p>
+    </div>
+  </div>
+  <button (click)="add()">add card</button><br /><br />
+
+  <div formArrayName="cards">
+    <div *ngFor="let card of cardsFormArray.controls; let i = index">
+      <div formControlName="{{ i }}">
+        <label>number</label>
+        <input type="text" formControlNam="number" /><br />
+
+        <label>expiry</label>
+        <input type="month" formControlNam="expiry" /><br />
+
+        <label>cvv</label>
+        <input type="number" formControlNam="cvv" />
+        <div
+          class="error"
+          *ngIf="
+            cardsFormArray.controls[i]?.get('cvv')?.touched &&
+            cardsFormArray.controls[i]?.get('cvv')?.invalid
+          "
+        >
+          <p
+            *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['required']"
+          >
+            cvv is required
+          </p>
+
+          <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['min']">
+            cvv min 3 chars
+          </p>
+
+          <p *ngIf="cardsFormArray.controls[i]?.get('cvv')?.errors?.['max']">
+            cvv max 3 chars
+          </p>
+        </div>
+
+        <button (click)="Remove(i)">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <label>payment Type:</label><br>
+  <label>UPI payment</label>
+  <input type="radio" name="payment" value="upi" formControlName="paymentType">
+  <label>card payment</label>
+  <input type="radio" name="payment" value="card" formControlName="paymentType">
+  <br>
+
+  <div *ngIf="userForm.get('paymentType')?.value=='upi'">
+  <label>upiId:</label>
+  <input type="text" formControlName="upiId">
+  <br>
+</div>
+<div *ngIf="userForm.get('paymentType')?.value=='card'">
+  <label>cardNo:</label>
+  <input type="text" formControlName="cardNo">
+  <br>
+</div>
+  <button (click)="Submit()">submit</button>
+</form>

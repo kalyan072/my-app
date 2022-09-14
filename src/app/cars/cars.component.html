@@ -1,0 +1,20 @@
+<p>cars works!</p>
+ 
+ <h4>company :</h4>
+ <input type="radio" name="car" value="honda" [(ngModel)]="car">
+ <label>Honda</label>
+ 
+ <input type="radio" name="car" value="BMW" [(ngModel)]="car">
+ <label>Bmw</label>
+
+ <input type="radio" name="car" value="Audi"[(ngModel)]="car">
+ <label>Audi</label>
+ <br>
+
+ <img *ngIf="car=='honda'" src="https://www.bing.com/th?id=OIP.9n_Y-gDrNfDlNtkwJzYqsAHaEK&w=333&h=187&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2" width="30%" height="30%"><br><br>
+ <img *ngIf="car=='BMW'"src="https://www.bing.com/th?id=OIP.wkzemUbvWOvmDyKaEZ7DegHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2" width="30%" height="30%"><br><br>
+ <img *ngIf="car=='Audi'" src="https://th.bing.com/th/id/OIP.NVX5wqB7wRw43OH5FFK3xwHaEK?w=272&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7" width="30%" height="30%"><br>
+
+ <marquee>{{ message }}</marquee>
+
+

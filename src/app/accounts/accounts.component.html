@@ -1,0 +1,53 @@
+<input type="text" [(ngModel)]="filterTerm" />
+<button class="btn btn-primary" (click)="(filter)">filter</button>
+<select [(ngModel)]="column">
+  <option>createdAt</option>
+  <option>account_Name</option>
+  <option>available_balance</option>
+  <option>checking_Account</option>
+  <option>user_image</option>
+  <option>account_Name</option>
+  <option>id</option>
+</select>
+
+<select [(ngModel)]="order">
+  <option>asc</option>
+  <option>desc</option>
+
+  <button (click)="(sort)">sort</button>
+</select>
+<table class="table">
+  <thead>
+    <tr>
+      <th>createdAt</th>
+      <th>account_Name</th>
+      <th>available_balance</th>
+      <th>checking_Account</th>
+      <th>user_image</th>
+      <th>accountnumber</th>
+      <th>id</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let accounts of accounts">
+      <td>{{ accounts.createdAt }}</td>
+      <td>{{ accounts.account_Name }}</td>
+      <td>{{ accounts.available_balance }}</td>
+      <td>{{ accounts.checking_Account }}</td>
+      <td>{{ accounts.accountnumber }}</td>
+      <td>{{ accounts.user_image }}</td>
+      <td>{{ accounts.id }}</td>
+      <td>
+        <button class="btn btn-warning" (click)="delete(accounts.id)">
+          delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+  <ul class="pagination">
+    <li class="page-item" (click)="page(1)"><a class="page-link">1</a></li>
+    <li class="page-item" (click)="page(2)"><a class="page-link">2</a></li>
+    <li class="page-item" (click)="page(3)"><a class="page-link">3</a></li>
+  </ul>
+</table>

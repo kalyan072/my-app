@@ -1,0 +1,51 @@
+<div class="container">
+<h2>Employee Details</h2>
+
+  <label>name</label>
+  <input class="form-control" type="text" placeholder="entrer name" [(ngModel)]="name" />
+  <br />
+
+  <label>age</label>
+  <input class="form-control" type="number"  [(ngModel)]="age" />
+  <br />
+
+  <label>company</label>
+  <input class="form-control" type="text" [(ngModel)]="company" />
+  <br />
+
+  <label>package</label>
+  <input class="form-control" type="number" [(ngModel)]="package" />
+  <br />
+
+  <button class="btn btn-primary" (click)="add()">Register</button>
+  <br />
+  <br />
+
+  <button class="btn btn-info" (click)="priceLowToHigh()">
+    priceLowToHigh
+  </button>
+  <button class="btn btn-sucess" (click)="priceHighToLow()">
+    priceHighToLow
+  </button>
+</div>
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>age</th>
+      <th>company</th>
+      <th>package</th>
+      <th>Action</th>
+      <button class="btn btn-warning" (click)="deleteall()">deleteall</button>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employees of employees; let i = index">
+      <td>{{ employees.name }}</td>
+      <td>{{ employees.age | age }}</td>
+      <td>{{ employees.company }}</td>
+      <td>{{ employees.package | package }}</td>
+      <td><button (click)="delete(i)">delete</button></td>
+    </tr>
+  </tbody>
+</table>

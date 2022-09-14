@@ -1,0 +1,23 @@
+<div class="row">
+  <div
+    *ngFor="let datacard of datacards" class="col-lg-6 col-md-3 col-sm-4
+    child1">
+    <div class="child2">
+      <p>{{ datacard.id }}</p>
+      <p>{{ datacard.name }}</p>
+      <p>{{ datacard.username }}</p>
+      <p>{{ datacard.email }}</p>
+      <p>{{ datacard.address.street }}</p>
+      <p>{{ datacard.address.suite }}</p>
+      <p>{{ datacard.address.city }}</p>
+      <p>{{ datacard.address.zipcode }}</p>
+      <p>{{ datacard.address.geo.lat }}</p>
+      <p>{{ datacard.address.geo.lng }}</p>
+      <p>{{ datacard.phone }}</p>
+      <p>{{ datacard.website }}</p>
+      <p>{{ datacard.company.name }}</p>
+      <p>{{ datacard.company.catchphrase }}</p>
+      <p>{{ datacard.company.bs }}</p>
+    </div>
+  </div>
+</div>

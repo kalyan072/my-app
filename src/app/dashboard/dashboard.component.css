@@ -1,0 +1,26 @@
+.parent {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+.child1 {
+  width: 20%;
+  height: 100%;
+  background-color: black;
+  color: white;
+  text-align: left;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  overflow: auto;
+}
+button {
+  height: 30px;
+  width: 60px;
+  background-color: rgb(150, 255, 45);
+  border-radius: 10px;
+}
+.child2 {
+  width: 80%;
+  height: 100%;
+  background-color: rgb(53, 201, 177);
+  overflow: auto;
+}

@@ -1,0 +1,14 @@
+<h1>studentregister</h1>
+<label>Name</label>
+<input class="form-control" type="text" [(ngModel)]="name"/>
+<br>
+<button class="btn btn-primary" (click)= "register()">Register</button>
+<ol>
+    <li *ngFor= "let name of names;let i= index">{{ name }}
+       <button (click)= "deleteEach(i)">delete</button>
+    </li>
+</ol>
+
+<button class="btn btn-danger" (click)= "delete()">delete</button>
+<button class="btn btn-danger" (click)= "deleteAll()">delete all</button>
+<button class="btn btn-warning" (click)= "reverse()">reverse</button>

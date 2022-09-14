@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Recatangle</h1>
+
+  <label>Length</label>
+  <input class="form-control" type="number" [(ngModel)]="length" />
+  <br />
+  <label>Breadth</label>
+  <input class="form-control" type="number" [(ngModel)]="breadth" />
+  <br />
+  <button class="btn btn-primary" (click)="area()">Area</button>
+  <button class="btn btn-secondary" (click)="perimeter()">Perimeter</button>
+  <br />
+  <h2>Result is: {{ result }}</h2>
+</div>
