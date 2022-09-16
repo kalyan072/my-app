@@ -7,6 +7,7 @@ import { CaluclatorComponent } from './caluclator/caluclator.component';
 import { CarsComponent } from './cars/cars.component';
 import { CartIIComponent } from './cart-ii/cart-ii.component';
 import { CartComponent } from './cart/cart.component';
+import { CartlistComponent } from './cartlist/cartlist.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -20,14 +21,19 @@ import { HomeComponent } from './home/home.component';
 import { ItemComponent } from './item/item.component';
 import { LoginComponent } from './login/login.component';
 import { MailComponent } from './mail/mail.component';
+import { NavComponent } from './nav/nav.component';
 import { NotifyGuard } from './notify.guard';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ParentComponent } from './parent/parent.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { ProductComponent } from './product/product.component';
 import { RectangleComponent } from './rectangle/rectangle.component';
 import { SocialmediaComponent } from './socialmedia/socialmedia.component';
 import { SquareComponent } from './square/square.component';
+import { StarComponent } from './star/star.component';
 import { StudentRegisterComponent } from './student-register/student-register.component';
 import { TwowayBindingComponent } from './twoway-binding/twoway-binding.component';
+import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 
 const routes: Routes = [
@@ -55,7 +61,14 @@ const routes: Routes = [
     {path:'mail',component:MailComponent},
     {path: 'datacard',component:DatacardComponent},
     {path:'createvehicle',component:CreateVehicleComponent,canDeactivate: [NotifyGuard]},
-    {path:'create-user',component:CreateUserComponent}
+    {path:'create-user',component:CreateUserComponent},
+    {path:'parent',component:ParentComponent},
+    {path:'product',component:ProductComponent},
+    {path:'cartlist', component:CartlistComponent},
+    {path:'nav',component:NavComponent},
+    {path:'vehicle-details/:id',component:VehicleDetailsComponent}
+  
+
   ]
 },
   {path:'',component:LoginComponent},

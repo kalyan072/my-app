@@ -25,6 +25,7 @@
       <th>Fuel</th>
       <th>color</th>
       <th>id</th>
+      <th>Menu</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -38,10 +39,13 @@
       <td>{{ vehicle.color }}</td>
       <td>{{ vehicle.id }}</td>
       <td>
-        <button class="btn btn-warning" (click)="delete(vehicle.id)">
-          Delete
-        </button>
-      </td>
+        <button class="btn btn-primary" (click)="view(vehicle.id)">View</button>
+
+      
+        <button class="btn btn-warning" (click)="delete(vehicle.id)">Delete</button>
+      
+        </td>
+        
     </tr>
   </tbody>
   <ul class="pagination">
